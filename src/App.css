@@ -1,9 +1,23 @@
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(rgba(82, 23, 37, 1), #261419, #161315);
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-main {
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -13,9 +27,29 @@
   }
 }
 
+.App-box {
+  background-color: #4b3339;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+}
+
+.App-B {
+  font-weight: 500;
+}
+
+.App-title {
+  font-weight: 200;
+  line-height: 10px;
+  font-size: calc(15px + 2vmin);
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+  padding-top: 1.3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +66,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
