@@ -33,8 +33,52 @@
   align-items: center;
   flex-direction: row;
   width: 70%;
+  display: flex;
   margin-bottom: 0.4em;
   margin-top: 0.4em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.App-player-name {
+  color: white;
+  font-size: 18px;
+  line-height: 0px;
+}
+
+.App-player-coins {
+  color: #E57A96;
+  font-size: 14.7px;
+  font-weight: 600;
+  line-height: 6px;
+  margin-top: 0.1px;
+}
+
+.App-player-rank {
+  color: white;
+  font-size: 14.7px;
+  font-weight: 600;
+  line-height: 6px;
+  margin-top: 0.1px;
+  opacity: 0.8;
+}
+
+.App-bugs {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 0px;
+}
+
+.App-reports {
+  color: white;
+  font-size: 11.6px;
+  line-height: 6px;
+  margin-top: 0.1px;
+  opacity: 0.8;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.3em;
 }
 
 .App-B {
@@ -48,7 +92,6 @@
 }
 
 .App-header {
-
   padding-top: 1.3em;
   display: flex;
   flex-direction: column;
@@ -60,6 +103,42 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-player-icon {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-main-data {
+  display: flex;
+  flex: 6;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App-player-bugs {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App-icon-bug {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-left: -1.7em;
+  margin-top: -0.5em;
+}
+
+.App-icon-person {
+  width: 63px;
+  height: 63px;
 }
 
 @keyframes App-logo-spin {
