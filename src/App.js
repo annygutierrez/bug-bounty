@@ -14,17 +14,20 @@ function App() {
 
   const getValue = async () => {
     const value = await storeClass.getValue();
+    const add = await storeClass.addPlayer();
+    console.log('add', add);
     console.log("Message received: ", value);
-    setNewValue(value);
+    // setNewValue(value);
   }
 
-  const setValue = async (e) => {
-    e.preventDefault();
-    const receipt = await storeClass.setValue(addressFrom, privKey)
-    console.log(receipt);
-  }
+  // const setValue = async (e) => {
+  //   e.preventDefault();
+  //   const receipt = await storeClass.setValue(addressFrom, privKey)
+  //   console.log(receipt);
+  // }
 
   useEffect(() => {
+    getValue();
     setPlayers([
       {
         name: 'Luis Leopardi',
@@ -53,15 +56,15 @@ function App() {
         {
           playersList.map(player => (
             <div className="App-box">
-               <div class="App-player-icon">
+               <div className="App-player-icon">
                  <img src={UserImage} className="App-icon-person" />
                </div>
-               <div class="App-main-data">
+               <div className="App-main-data">
                  <p className="App-player-name">{player.name}</p>
                  <p className="App-player-coins">{player.coins} coin(s)</p>
                  <p className="App-player-rank">{player.rank} rank</p>
                </div>
-               <div class="App-player-bugs">
+               <div className="App-player-bugs">
                  <p className="App-bugs">{player.bugs}</p>
                  <p className="App-reports"><img src={InsectImage} className="App-icon-bug" />reported</p>
                </div>
@@ -69,30 +72,6 @@ function App() {
           ))
         }
       </main>
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: 70 }}>
-        <p style={{ fontWeight: '600', fontSize: 20, lineHeight: 0 }}>Get value</p>
-        <p style={{ lineHeight: 0 }}>Gets a value from a smart contract state</p>
-
-        <div style={{ marginTop: 25 }}>
-          <button onClick={getValue} type="submit" className="loginButton btn btn-lg col-md-6 col-md-offset-3 col-xs-12" style={{ paddingTop: 15, paddingBottom: 15, paddingLeft: 15, paddingRight: 15, borderRadius: 12 }}>Get Value</button>
-        </div>
-        <p style={{ fontSize: 30, fontWeight: '600' }}>{newValue}</p>
-      </div>
-      <form className="row" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: 70, paddingBottom: 50 }}>
-        <div className="form-group" style={{ position: 'relative' }}>
-          <input onChange={(e) => setAddressFrom(e.target.value)} placeholder=" " id="username" className="form-control" name="username" />
-          <div className="floater"></div>
-        </div>
-
-        <div className="form-group" style={{ position: 'relative', marginTop: 30 }}>
-          <input onChange={(e) => setPrivKey(e.target.value)} placeholder=" " id="password" className="form-control" name="password" />
-          <div className="floater"></div>
-        </div>
-
-        <div style={{ marginTop: 40 }}>
-          <button onClick={setValue} className="loginButton btn btn-lg col-md-6 col-md-offset-3 col-xs-12" style={{ paddingTop: 15, paddingBottom: 15, paddingLeft: 15, paddingRight: 15, borderRadius: 12 }}>Set value in blockchain</button>
-        </div>
-      </form>
     </div>
   );
 }

@@ -1,8 +1,49 @@
 module.exports = {
     Storage: [
         {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_coins",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_bugsNumber",
+                    "type": "uint256"
+                }
+            ],
+            "name": "addPlayer",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_coins",
+                    "type": "uint256"
+                }
+            ],
+            "name": "editCoins",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "inputs": [],
-            "name": "retreive",
+            "name": "getLength",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -15,41 +56,49 @@ module.exports = {
         },
         {
             "inputs": [],
-            "name": "retreiveName",
+            "name": "getPlayersList",
             "outputs": [
                 {
-                    "internalType": "string",
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "string"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view",
+            "stateMutability": "pure",
             "type": "function"
         },
         {
             "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "num",
+                    "name": "",
                     "type": "uint256"
                 }
             ],
-            "name": "store",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
+            "name": "players",
+            "outputs": [
                 {
                     "internalType": "string",
-                    "name": "newName",
+                    "name": "name",
                     "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "coins",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bugsNumber",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
                 }
             ],
-            "name": "storeString",
-            "outputs": [],
-            "stateMutability": "nonpayable",
+            "stateMutability": "view",
             "type": "function"
         }
     ]
