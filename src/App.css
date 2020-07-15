@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 2em;
+  padding-bottom: 4em;
 }
 
 .App-logo {
@@ -38,6 +39,22 @@
   margin-top: 0.4em;
   padding-bottom: 1em;
   padding-top: 1em;
+}
+
+.App-box:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.App-box:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.AApp-box:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+    0 15px 24px var(--box-shadow-color);
 }
 
 .App-player-name {

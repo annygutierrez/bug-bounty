@@ -59,12 +59,34 @@ module.exports = {
             "name": "getPlayersList",
             "outputs": [
                 {
-                    "internalType": "uint256",
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "coins",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "bugsNumber",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "id",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct PlayersContract.Player[]",
                     "name": "",
-                    "type": "uint256"
+                    "type": "tuple[]"
                 }
             ],
-            "stateMutability": "pure",
+            "stateMutability": "view",
             "type": "function"
         },
         {

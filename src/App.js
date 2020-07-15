@@ -17,6 +17,8 @@ function App() {
     const add = await storeClass.addPlayer();
     console.log('add', add);
     console.log("Message received: ", value);
+    const playersArr = value.map(player => ({ name: player[0], coins: player[1], rank: player[3], bugs: player[2] }))
+    setPlayers(playersArr);
     // setNewValue(value);
   }
 
@@ -28,20 +30,20 @@ function App() {
 
   useEffect(() => {
     getValue();
-    setPlayers([
-      {
-        name: 'Luis Leopardi',
-        coins: 1563,
-        rank: 1,
-        bugs: 11003
-      },
-      {
-        name: 'Camilo Henao',
-        coins: 902,
-        rank: 2,
-        bugs: 9000
-      }
-    ]);
+    // setPlayers([
+    //   {
+    //     name: 'Luis Leopardi',
+    //     coins: 1563,
+    //     rank: 1,
+    //     bugs: 11003
+    //   },
+    //   {
+    //     name: 'Camilo Henao',
+    //     coins: 902,
+    //     rank: 2,
+    //     bugs: 9000
+    //   }
+    // ]);
   }, []);
 
   return (
