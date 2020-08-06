@@ -1,5 +1,5 @@
 pragma solidity >=0.4.22 <0.7.0;
-// Esto solo lo puse para probar, pero solo quiero que me funcione el contrato para cambiar la lógica
+// Pragma experimental de prueba
 pragma experimental ABIEncoderV2;
 
 contract PlayersContract {

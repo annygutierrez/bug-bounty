@@ -6,44 +6,20 @@ import InsectImage from './assets/images/insect.svg';
 import store from './utils/store';
 
 function App() {
-  const [storeClass, setStore] = useState(new store());
-  const [privKey, setPrivKey] = useState('');
-  const [addressFrom, setAddressFrom] = useState('');
-  const [newValue, setNewValue] = useState('');
+  const storeClass = new store();
   const [playersList, setPlayers] = useState([]);
 
   const getValue = async () => {
     const value = await storeClass.getValue();
-    const add = await storeClass.addPlayer();
-    console.log('add', add);
-    console.log("Message received: ", value);
-    const playersArr = value.map(player => ({ name: player[0], coins: player[1], rank: player[3], bugs: player[2] }))
-    setPlayers(playersArr);
-    // setNewValue(value);
+    const players = value.map(player => ({ name: player[0], coins: player[1], bugs: player[2], id: player[3] }));
+    const sortPlayers = players.sort((a, b) => parseFloat(b.coins) - parseFloat(a.coins));
+    const addRank = sortPlayers.map((item, i) => ({ rank: i + 1, ...item }));
+    console.log('lista de jugadores', addRank);
+    setPlayers(addRank);
   }
-
-  // const setValue = async (e) => {
-  //   e.preventDefault();
-  //   const receipt = await storeClass.setValue(addressFrom, privKey)
-  //   console.log(receipt);
-  // }
 
   useEffect(() => {
     getValue();
-    // setPlayers([
-    //   {
-    //     name: 'Luis Leopardi',
-    //     coins: 1563,
-    //     rank: 1,
-    //     bugs: 11003
-    //   },
-    //   {
-    //     name: 'Camilo Henao',
-    //     coins: 902,
-    //     rank: 2,
-    //     bugs: 9000
-    //   }
-    // ]);
   }, []);
 
   return (
@@ -57,7 +33,7 @@ function App() {
       <main className="App-main">
         {
           playersList.map(player => (
-            <div className="App-box">
+            <div key={player.id} className="App-box">
                <div className="App-player-icon">
                  <img src={UserImage} className="App-icon-person" />
                </div>
