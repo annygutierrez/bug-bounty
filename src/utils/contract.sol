@@ -37,5 +37,4 @@ contract PlayersContract {
     function editCoins(uint256 _id, uint256 _coins) public {
         players[_id].coins = _coins;
     }
-    
 }
